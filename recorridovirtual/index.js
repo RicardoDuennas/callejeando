@@ -386,7 +386,23 @@
     return null;
   }
 
-  // Display the initial scene.
-  switchScene(scenes[0]);
+  const urlParams = new URLSearchParams(window.location.search);
+  const sceneId = urlParams.get('sceneId'); // Retrieves the value of 'param1'
+  
+  if (sceneId){
+    const targetScene = findSceneById(sceneId);
+    if (targetScene) {
+      switchScene(targetScene);
+    } else {
+      switchScene(scenes[0]);
+    }
+  }
 
+  // If no scene was loaded via URL, show the first one
+  if (!sceneId || !findSceneById(sceneId)) {
+    if (scenes.length > 0) {
+      switchScene(scenes[0]);
+    }
+  }
+  
 })();
