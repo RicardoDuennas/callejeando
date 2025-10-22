@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Mapa barrio Armenia - marcadores</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-w3cgY9fZ7kMK1pFhW6n+Tz6AhVwLxMKUs7JZjKcoM4R9ry8q7X/fT0HVnbiDkPlPv0D4VQdJz2iAD2Khcb9z/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- ExtraMarkers CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-extra-markers@1.2.1/dist/css/leaflet.extra-markers.min.css" />
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    #map {
+      height: 100%;
+      width: 100%;
+    }
+    .popup-img {
+      width: 150px;
+      height: auto;
+      display: block;
+      margin: 5px 0;
+    }
+    .popup-details {
+      font-size: 13px;
+      line-height: 1.3em;
+    }
+    .popup-title {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+    .popup-extra {
+      margin-top: 4px;
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  
+  <!-- ExtraMarkers JS -->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-extra-markers@1.2.1/dist/js/leaflet.extra-markers.min.js"></script>
+
+  <script>
+    // Bounds
+    const southWest = L.latLng(4.615267, -74.076734);
+    const northEast = L.latLng(4.621993, -74.069653);
+    const bounds = L.latLngBounds(southWest, northEast);
+    const center = bounds.getCenter();
+
+    // Map
+    const map = L.map('map', {
+      center: center,
+      zoom: 18,
+      maxBounds: bounds,
+      maxBoundsViscosity: 1.0
+    });
+
+    // Tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 22
+    }).addTo(map);
+
+    // Transparent bounds rectangle
+    L.rectangle(bounds, { color: "#ff7800", weight: 1, fillOpacity: 0 }).addTo(map);
+
+    // Fixed list of markers with details
+    const points = [
+      { lat: 4.6185, lng: -74.0740, color: 'red', type: 'image', content: 'https://picsum.photos/200/150?random=1',
+        details: { title: 'Marker One', content: 'This is an image marker.', extra: 'Extra info about Marker One.' } },
+      { lat: 4.6190, lng: -74.0750, color: 'green', type: 'book', content: 'Book title: <i>Research Paper 1</i>',
+        details: { title: 'Marker Two', content: 'This is a book marker.', extra: 'Stored in archive section.' } },
+      { lat: 4.6200, lng: -74.0730, color: 'blue', type: 'audio', content: 'https://www.w3schools.com/html/horse.mp3',
+        details: { title: 'Marker Three', content: 'This is an audio marker.', extra: 'Duration: 15s' } },
+      { lat: 4.6175, lng: -74.0705, color: 'orange', type: 'video', content: 'https://www.w3schools.com/html/mov_bbb.mp4',
+        details: { title: 'Marker Four', content: 'This is a video marker.', extra: 'Format: MP4' } },
+      { lat: 4.6188, lng: -74.0712, color: 'purple', type: 'image', content: 'https://picsum.photos/200/150?random=2',
+        details: { title: 'Marker Five', content: 'Another image marker.', extra: 'Taken in 2022' } },
+      { lat: 4.6169, lng: -74.0748, color: 'cyan', type: 'book', content: 'Book title: <i>Atlas Study</i>',
+        details: { title: 'Marker Six', content: 'Book-related marker.', extra: 'Edition: 3rd' } },
+      { lat: 4.6172, lng: -74.0738, color: 'pink', type: 'audio', content: 'https://www.w3schools.com/html/horse.mp3',
+        details: { title: 'Marker Seven', content: 'Audio resource.', extra: 'Recorded live' } },
+      { lat: 4.6202, lng: -74.0725, color: 'yellow', type: 'video', content: 'https://www.w3schools.com/html/mov_bbb.mp4',
+        details: { title: 'Marker Eight', content: 'Video material.', extra: 'HD quality' } },
+      { lat: 4.6195, lng: -74.0708, color: 'black', type: 'image', content: 'https://picsum.photos/200/150?random=3',
+        details: { title: 'Marker Nine', content: 'Another photo.', extra: 'Source: field study' } },
+      { lat: 4.6165, lng: -74.0715, color: 'green', type: 'book', content: 'Book title: <i>Field Notes</i>',
+        details: { title: 'Marker Ten', content: 'Field notes marker.', extra: 'Updated in 2024' } }
+    ];
+
+    // Add markers
+    points.forEach((point, i) => {
+      const icon = L.ExtraMarkers.icon({
+        icon: 'fa-number',
+        number: i + 1,
+        markerColor: point.color,
+        shape: 'circle'
+      });
+
+      let popupContent = `
+        <div class="popup-details">
+          <div class="popup-title">${point.details.title}</div>
+          <div>${point.details.content}</div>
+      `;
+
+      if (point.type === 'image') {
+        popupContent += `<img class="popup-img" src="${point.content}" alt="Image">`;
+      } else if (point.type === 'book') {
+        popupContent += `<div>${point.content}</div>`;
+      } else if (point.type === 'audio') {
+        popupContent += `<audio controls src="${point.content}"></audio>`;
+      } else if (point.type === 'video') {
+        popupContent += `<video width="200" controls><source src="${point.content}" type="video/mp4"></video>`;
+      }
+
+      popupContent += `<div class="popup-extra">${point.details.extra}</div></div>`;
+
+      L.marker([point.lat, point.lng], { icon: icon })
+        .addTo(map)
+        .bindPopup(popupContent);
+    });
+  </script>
+</body>
+</html>

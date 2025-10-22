@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Mapa del recorrido</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ExtraMarkers CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-extra-markers@1.2.1/dist/css/leaflet.extra-markers.min.css" />
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montez&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/aos.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+
+    <style>
+        #map {
+        height: 800px;
+        width: 100%;
+        }
+        .popup-img {
+        width: 150px;
+        height: auto;
+        display: block;
+        margin: 5px 0;
+        }
+        .popup-details {
+        font-size: 13px;
+        line-height: 1.3em;
+        }
+        .popup-title {
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 3px;
+        }
+        .popup-extra {
+        margin-top: 4px;
+        font-style: italic;
+        color: #555;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <div id="intro"><a href="index.html" target="" class="text-primary text-decoration-none"><img data-aos="fade" data-aos-duration="2500" data-aos-delay="50" id="loguitoArtmeniando" src="assets/img/callejeandologo.svg"></a>
+            <h2 data-aos="fade" data-aos-duration="2000" data-aos-delay="1300" id="tit1" style="font-weight: bold;">por el barrio Artmenia</h2>
+            <div class="card-group p-5 mx-auto" style="max-width: 1300px;">
+                <div class="card border-primary">
+                    <div class="card-body">
+
+                        <h1 class="card-title text-primary mb-3">Mapa del recorrido</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, erat nec dictum facilisis, 
+                                nisl ligula cursus sem, sit amet sodales risus magna non tortor. Integer et arcu nec velit gravida 
+                                rhoncus vitae ac enim. Suspendisse vel augue nec tortor varius dictum.
+                            </p>
+                        <div id="map"></div>
+
+                        <!-- Leaflet JS -->
+                        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+                        
+                        <!-- ExtraMarkers JS -->
+                        <script src="https://cdn.jsdelivr.net/npm/leaflet-extra-markers@1.2.1/dist/js/leaflet.extra-markers.min.js"></script>
+
+                        <script>
+                            // Bounds
+                            const southWest = L.latLng(4.6157, -74.0748);
+                            const northEast = L.latLng(4.621, -74.0702);
+                            const bounds = L.latLngBounds(southWest, northEast);
+                            const center = bounds.getCenter();
+
+                            // Map
+                            const map = L.map('map', {
+                            center: center,
+                            zoom: 17,
+                            maxBounds: bounds,
+                            maxBoundsViscosity: 1.0
+                            });
+
+                            // Tile layer
+                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '© OpenStreetMap contributors',
+                            maxZoom: 19
+                            }).addTo(map);
+
+                            // Transparent bounds rectangle
+                            L.rectangle(bounds, { color: "#225544", weight: 3, fillOpacity: 0 }).addTo(map);
+
+                            // Fixed list of markers with details
+                            const points = [
+                            {
+                                lat: 4.6176683, lng: -74.07177, color: 'red', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 1',
+                                content: 'Texto del punto 1. <br><a href="recorridovirtual/index.html" target="_blank" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha1.html" target="_blank" class="fw-semibold text-decoration-none">Ficha del punto 1</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6165786, lng: -74.0730897, color: 'green', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 2',
+                                content: 'Texto del punto 2. <br><a href="recorridovirtual/index.html" target="_blank" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha2.html" target="_blank" class="fw-semibold text-decoration-none">Ficha del punto 2</a>'
+                                }
+                            },
+                            {
+                                lat: 4.61742, lng: -74.073299, color: 'blue', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 3',
+                                content: 'Texto del punto 3. <br><a href="recorridovirtual/index.html" target="_blank" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha3.html" target="_blank" class="fw-semibold text-decoration-none">Ficha del punto 3</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6195707, lng: -74.0718697, color: 'orange', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 4',
+                                content: 'Texto del punto 4. <br><a href="recorridovirtual/index.html" target="_blank" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha4.html" target="_blank" class="fw-semibold text-decoration-none">Ficha del punto 4</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6200079, lng: -74.072191, color: 'purple', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 5',
+                                content: 'Texto del punto 5. <br><a href="recorridovirtual/index.html" target="_blank" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha5.html" target="_blank" class="fw-semibold text-decoration-none">Ficha del punto 5</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6189447, lng: -74.072939, color: 'cyan', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 6',
+                                content: 'Texto del punto 6. <br><a href="recorridovirtual/index.html" target="_blank" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha6.html" target="_blank" class="fw-semibold text-decoration-none">Ficha del punto 6</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6184171, lng: -74.0732192, color: 'pink', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 7',
+                                content: 'Texto del punto 7. <br><a href="recorridovirtual/index.html" target="_blank" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha7.html" target="_blank" class="fw-semibold text-decoration-none">Ficha del punto 7</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6182042, lng: -74.074264, color: 'yellow', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 8',
+                                content: 'Texto del punto 8. <br><a href="recorridovirtual/index.html" target="_blank" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha8.html" target="_blank" class="fw-semibold text-decoration-none">Ficha del punto 8</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6197723, lng: -74.0744377, color: 'black', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 9',
+                                content: 'Texto del punto 9. <br><a href="recorridovirtual/index.html" target="_blank" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha9.html" target="_blank" class="fw-semibold text-decoration-none">Ficha del punto 9</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6208455, lng: -74.0717385, color: 'green', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 10',
+                                content: 'Texto del punto 10. <br><a href=recorridovirtual/index1.html" target="_blank" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha10.html" target="_blank" class="fw-semibold text-decoration-none">Ficha del punto 10</a>'
+                                }
+                            }
+                            ];
+
+                            // Add markers
+                            points.forEach((point, i) => {
+                            const icon = L.ExtraMarkers.icon({
+                                icon: 'fa-number',
+                                number: i + 1,
+                                markerColor: point.color,
+                                shape: 'circle'
+                            });
+
+                            let popupContent = `
+                                <div class="popup-details">
+                                <div class="popup-title">${point.details.title}</div>
+                                <div>${point.details.content}</div>
+                            `;
+
+                            if (point.type === 'image') {
+                                popupContent += `<img class="popup-img" src="${point.content}" alt="Image">`;
+                            } else if (point.type === 'book') {
+                                popupContent += `<div>${point.content}</div>`;
+                            } else if (point.type === 'audio') {
+                                popupContent += `<audio controls src="${point.content}"></audio>`;
+                            } else if (point.type === 'video') {
+                                popupContent += `<video width="200" controls><source src="${point.content}" type="video/mp4"></video>`;
+                            }
+
+                            popupContent += `<div class="popup-extra">${point.details.extra}</div></div>`;
+
+                            L.marker([point.lat, point.lng], { icon: icon })
+                                .addTo(map)
+                                .bindPopup(popupContent);
+                            });
+                        </script>
+
+
+                        <div class="card-body">
+                            <p class="card-text">Haz click en los puntos para ver información preliminar o cargar la visualización 360 de cada uno.</p>
+                            
+                                <div class="d-flex justify-content-between align-items-center mt-5">
+                                    <a href="index.html" class="btn btn-outline-primary btn-sm">
+                                        <i class="fa-solid fa-arrow-left me-1"></i> Volver al inicio
+                                    </a>
+                                    <a href="recorridovirtual/index.html" class="btn btn-primary btn-sm" style="--bs-primary: #0066a6;">
+                                        <i class="fa-solid fa-map-location-dot me-1"></i> Ir al recorrido 360
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="background: #0066a6;height: 154px;width: 100%;--bs-primary: #0066a6;--bs-primary-rgb: 0,102,166;">
+        <footer class="text-center">
+            <div class="text-end" style="height: 0px;"><a href="#top"><i class="fa fa-angle-up" style="font-size: 24px;color: white;"></i></a></div>
+            <div class="d-flex align-items-center"><a class="text-decoration-none text-light" href="" style="font-size: 22px;margin: 4px;" target="_blank"><i class="fa fa-youtube-play" style="font-size: 26px;"></i></a></div>
+            <p class="text-light">aquí va la<br><strong>Información de la beca y el colectivo (y del barrio, opino).</strong></p>
+        </footer>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
