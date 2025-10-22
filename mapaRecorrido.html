@@ -24,28 +24,30 @@
 
     <style>
         #map {
-        height: 800px;
-        width: 100%;
+            width: 100%;
+            aspect-ratio: 4 / 3; /* Ensures 4:3 ratio */
+            max-width: 100%;
+            border: 2px solid #ccc; /* optional */
         }
         .popup-img {
-        width: 150px;
-        height: auto;
-        display: block;
-        margin: 5px 0;
+            width: 150px;
+            height: auto;
+            display: block;
+            margin: 5px 0;
         }
         .popup-details {
-        font-size: 13px;
-        line-height: 1.3em;
+            font-size: 13px;
+            line-height: 1.3em;
         }
         .popup-title {
-        font-weight: bold;
-        font-size: 14px;
-        margin-bottom: 3px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 3px;
         }
         .popup-extra {
-        margin-top: 4px;
-        font-style: italic;
-        color: #555;
+            margin-top: 4px;
+            font-style: italic;
+            color: #555;
         }
     </style>
 
@@ -60,12 +62,17 @@
                     <div class="card-body">
 
                         <h1 class="card-title text-primary mb-3">Mapa del recorrido</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, erat nec dictum facilisis, 
-                                nisl ligula cursus sem, sit amet sodales risus magna non tortor. Integer et arcu nec velit gravida 
-                                rhoncus vitae ac enim. Suspendisse vel augue nec tortor varius dictum.
-                            </p>
-                        <div id="map"></div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, erat nec dictum facilisis, 
+                            nisl ligula cursus sem, sit amet sodales risus magna non tortor. Integer et arcu nec velit gravida 
+                            rhoncus vitae ac enim. Suspendisse vel augue nec tortor varius dictum.
+                        </p>
+
+                    </div>
+
+                    <div id="map"></div>
+
+                    <div class="card-body">
 
                         <!-- Leaflet JS -->
                         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
