@@ -491,8 +491,8 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  background-color: rgb(103,115,131);
   cursor: pointer;
+  background-color: #ff7f00;
   -webkit-transition: width 0.3s ease-in-out 0.5s,
                       border-radius 0.3s ease-in-out 0.5s;
   transition: width 0.3s ease-in-out 0.5s,
@@ -521,6 +521,7 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  /* background-color: #45ff45; */
   -webkit-transition: width 0.3s ease-in-out,
                       border-radius 0.3s ease-in-out;
   transition: width 0.3s ease-in-out,
@@ -530,6 +531,7 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
 .info-hotspot .info-hotspot-icon-wrapper {
   width: 40px;
   height: 40px;
+  /* background-color: #4545ff; */
 }
 
 .mobile .info-hotspot .info-hotspot-icon-wrapper {
@@ -541,6 +543,7 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   width: 90%;
   height: 90%;
   margin: 5%;
+  /* background-color: #ff4545; */
 }
 
 .info-hotspot .info-hotspot-title-wrapper {
