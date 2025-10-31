@@ -2,7 +2,7 @@ var APP_DATA = {
   "scenes": [
     {
       "id": "0-punto01",
-      "name": "punto01",
+      "name": "1. El barrio Armenia sobre la Caracas",
       "levels": [
         {
           "tileSize": 256,
@@ -110,7 +110,7 @@ var APP_DATA = {
         {
           "yaw": 2.106509309243762,
           "pitch": -0.16624659824068715,
-          "title": "Punto 1",
+          "title": "El barrio Armenia sobre la Caracas",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
@@ -131,18 +131,13 @@ var APP_DATA = {
               <li><strong>Información 2:</strong> 1925</li>
               <li><strong>Información 3:</strong> Restaurada</li>
             </ul>
-            <p class="mt-2">
-              <a href="../ficha1.html" target="_blank" class="text-decoration-none fw-semibold text-primary">
-                Ver ficha completa →
-              </a>
-            </p>
           `
         }
       ]
     },
     {
       "id": "1-punto02",
-      "name": "punto02",
+      "name": "2. El corredor de las jardineras",
       "levels": [
         {
           "tileSize": 256,
@@ -256,7 +251,7 @@ var APP_DATA = {
         {
           "yaw": -1.1780972451,
           "pitch": -0.046624659824068715,
-          "title": "Punto 2",
+          "title": "El corredor de las jardineras",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
@@ -277,18 +272,13 @@ var APP_DATA = {
               <li><strong>Información 2:</strong> 1925</li>
               <li><strong>Información 3:</strong> Restaurada</li>
             </ul>
-            <p class="mt-2">
-              <a href="../ficha2.html" target="_blank" class="text-decoration-none fw-semibold text-primary">
-                Ver ficha completa →
-              </a>
-            </p>
           `
         }
       ]
     },
     {
       "id": "2-punto03",
-      "name": "punto03",
+      "name": "3. El parque Armenia",
       "levels": [
         {
           "tileSize": 256,
@@ -402,7 +392,7 @@ var APP_DATA = {
         {
           "yaw": 0.55106509309243762,
           "pitch": -0.046624659824068715,
-          "title": "Punto 3",
+          "title": "El parque Armenia",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
@@ -423,18 +413,13 @@ var APP_DATA = {
               <li><strong>Información 2:</strong> 1925</li>
               <li><strong>Información 3:</strong> Restaurada</li>
             </ul>
-            <p class="mt-2">
-              <a href="../ficha3.html" target="_blank" class="text-decoration-none fw-semibold text-primary">
-                Ver ficha completa →
-              </a>
-            </p>
           `
         }
       ]
     },
     {
       "id": "3-punto04",
-      "name": "punto04",
+      "name": "4. La casona y parque El Pony",
       "levels": [
         {
           "tileSize": 256,
@@ -542,7 +527,7 @@ var APP_DATA = {
         {
           "yaw": 1.7106509309243762,
           "pitch": -0.046624659824068715,
-          "title": "Punto 4",
+          "title": "La casona y parque El Pony",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
@@ -563,18 +548,13 @@ var APP_DATA = {
               <li><strong>Información 2:</strong> 1925</li>
               <li><strong>Información 3:</strong> Restaurada</li>
             </ul>
-            <p class="mt-2">
-              <a href="../ficha4.html" target="_blank" class="text-decoration-none fw-semibold text-primary">
-                Ver ficha completa →
-              </a>
-            </p>
           `
         }
       ]
     },
     {
       "id": "4-punto05",
-      "name": "punto05",
+      "name": "5. La casa del General París y su vecindario",
       "levels": [
         {
           "tileSize": 256,
@@ -688,7 +668,7 @@ var APP_DATA = {
         {
           "yaw": -2.3,
           "pitch": 0,
-          "title": "Punto 5",
+          "title": "La casa del General París y su vecindario",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
@@ -709,18 +689,13 @@ var APP_DATA = {
               <li><strong>Información 2:</strong> 1925</li>
               <li><strong>Información 3:</strong> Restaurada</li>
             </ul>
-            <p class="mt-2">
-              <a href="../ficha6.html" target="_blank" class="text-decoration-none fw-semibold text-primary">
-                Ver ficha completa →
-              </a>
-            </p>
           `
         },
       ]
     },
     {
       "id": "5-punto06",
-      "name": "punto06",
+      "name": "6. Documento faltante",
       "levels": [
         {
           "tileSize": 256,
@@ -822,7 +797,7 @@ var APP_DATA = {
         {
           "yaw": -1.1780972451,
           "pitch": -0.046624659824068715,
-          "title": "Punto 6",
+          "title": "Documento faltante",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
@@ -843,18 +818,13 @@ var APP_DATA = {
               <li><strong>Información 2:</strong> 1925</li>
               <li><strong>Información 3:</strong> Restaurada</li>
             </ul>
-            <p class="mt-2">
-              <a href="../ficha6.html" target="_blank" class="text-decoration-none fw-semibold text-primary">
-                Ver ficha completa →
-              </a>
-            </p>
           `
         }
       ]
     },
     {
       "id": "6-punto07",
-      "name": "punto07",
+      "name": "7. La YMCA y la sinagoga",
       "levels": [
         {
           "tileSize": 256,
@@ -956,7 +926,7 @@ var APP_DATA = {
         {
           "yaw": 0.55106509309243762,
           "pitch": -0.046624659824068715,
-          "title": "Punto 7",
+          "title": "La YMCA y la sinagoga",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
@@ -977,18 +947,13 @@ var APP_DATA = {
               <li><strong>Información 2:</strong> 1925</li>
               <li><strong>Información 3:</strong> Restaurada</li>
             </ul>
-            <p class="mt-2">
-              <a href="../ficha7.html" target="_blank" class="text-decoration-none fw-semibold text-primary">
-                Ver ficha completa →
-              </a>
-            </p>
           `
         }
       ]
     },
     {
       "id": "7-punto08",
-      "name": "punto08",
+      "name": "8. El Umbral de la Reconciliación",
       "levels": [
         {
           "tileSize": 256,
@@ -1090,7 +1055,7 @@ var APP_DATA = {
         {
           "yaw": -2.541592,
           "pitch": 0.10466246598240,
-          "title": "Punto 8",
+          "title": "El Umbral de la Reconciliación",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
@@ -1111,18 +1076,13 @@ var APP_DATA = {
               <li><strong>Información 2:</strong> 1925</li>
               <li><strong>Información 3:</strong> Restaurada</li>
             </ul>
-            <p class="mt-2">
-              <a href="../ficha8.html" target="_blank" class="text-decoration-none fw-semibold text-primary">
-                Ver ficha completa →
-              </a>
-            </p>
           `
         }
       ]
     },
     {
       "id": "8-punto09",
-      "name": "punto09",
+      "name": "9. El corredor de Las Mercedes",
       "levels": [
         {
           "tileSize": 256,
@@ -1224,7 +1184,7 @@ var APP_DATA = {
         {
           "yaw": -2.785165121324,
           "pitch": -0.046624659824068715,
-          "title": "Punto 9",
+          "title": "El corredor de Las Mercedes",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
@@ -1245,18 +1205,13 @@ var APP_DATA = {
               <li><strong>Información 2:</strong> 1925</li>
               <li><strong>Información 3:</strong> Restaurada</li>
             </ul>
-            <p class="mt-2">
-              <a href="../ficha9.html" target="_blank" class="text-decoration-none fw-semibold text-primary">
-                Ver ficha completa →
-              </a>
-            </p>
           `
         }
       ]
     },
     {
       "id": "9-punto10",
-      "name": "punto10",
+      "name": "10. Documento faltante",
       "levels": [
         {
           "tileSize": 256,
@@ -1358,7 +1313,7 @@ var APP_DATA = {
         {
           "yaw": -1.3106509309243762,
           "pitch": -0.046624659824068715,
-          "title": "Punto 10",
+          "title": "Documento faltante",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
@@ -1379,11 +1334,6 @@ var APP_DATA = {
               <li><strong>Información 2:</strong> 1925</li>
               <li><strong>Información 3:</strong> Restaurada</li>
             </ul>
-            <p class="mt-2">
-              <a href="../ficha10.html" target="_blank" class="text-decoration-none fw-semibold text-primary">
-                Ver ficha completa →
-              </a>
-            </p>
           `
         }
       ]    }

@@ -43,6 +43,10 @@
       font-style: italic;
       color: #555;
     }
+    .leaflet-marker-icon.extra-marker {
+      transform: scale(2.5);
+      transform-origin: center;
+    }
   </style>
 </head>
 <body>
@@ -79,29 +83,99 @@
     L.rectangle(bounds, { color: "#ff7800", weight: 1, fillOpacity: 0 }).addTo(map);
 
     // Fixed list of markers with details
-    const points = [
-      { lat: 4.6185, lng: -74.0740, color: 'red', type: 'image', content: 'https://picsum.photos/200/150?random=1',
-        details: { title: 'Marker One', content: 'This is an image marker.', extra: 'Extra info about Marker One.' } },
-      { lat: 4.6190, lng: -74.0750, color: 'green', type: 'book', content: 'Book title: <i>Research Paper 1</i>',
-        details: { title: 'Marker Two', content: 'This is a book marker.', extra: 'Stored in archive section.' } },
-      { lat: 4.6200, lng: -74.0730, color: 'blue', type: 'audio', content: 'https://www.w3schools.com/html/horse.mp3',
-        details: { title: 'Marker Three', content: 'This is an audio marker.', extra: 'Duration: 15s' } },
-      { lat: 4.6175, lng: -74.0705, color: 'orange', type: 'video', content: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        details: { title: 'Marker Four', content: 'This is a video marker.', extra: 'Format: MP4' } },
-      { lat: 4.6188, lng: -74.0712, color: 'purple', type: 'image', content: 'https://picsum.photos/200/150?random=2',
-        details: { title: 'Marker Five', content: 'Another image marker.', extra: 'Taken in 2022' } },
-      { lat: 4.6169, lng: -74.0748, color: 'cyan', type: 'book', content: 'Book title: <i>Atlas Study</i>',
-        details: { title: 'Marker Six', content: 'Book-related marker.', extra: 'Edition: 3rd' } },
-      { lat: 4.6172, lng: -74.0738, color: 'pink', type: 'audio', content: 'https://www.w3schools.com/html/horse.mp3',
-        details: { title: 'Marker Seven', content: 'Audio resource.', extra: 'Recorded live' } },
-      { lat: 4.6202, lng: -74.0725, color: 'yellow', type: 'video', content: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        details: { title: 'Marker Eight', content: 'Video material.', extra: 'HD quality' } },
-      { lat: 4.6195, lng: -74.0708, color: 'black', type: 'image', content: 'https://picsum.photos/200/150?random=3',
-        details: { title: 'Marker Nine', content: 'Another photo.', extra: 'Source: field study' } },
-      { lat: 4.6165, lng: -74.0715, color: 'green', type: 'book', content: 'Book title: <i>Field Notes</i>',
-        details: { title: 'Marker Ten', content: 'Field notes marker.', extra: 'Updated in 2024' } }
-    ];
-
+                            // Fixed list of markers with details
+                            const points = [
+                            {
+                                lat: 4.6176683, lng: -74.07177, color: 'red', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 1',
+                                content: 'Texto del punto 1. <br><a href="recorridovirtual/index.html?sceneId=0-punto01" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha1.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 1</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6165786, lng: -74.0730897, color: 'green', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 2',
+                                content: 'Texto del punto 2. <br><a href="recorridovirtual/index.html?sceneId=1-punto02" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha2.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 2</a>'
+                                }
+                            },
+                            {
+                                lat: 4.61742, lng: -74.073299, color: 'blue', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 3',
+                                content: 'Texto del punto 3. <br><a href="recorridovirtual/index.html?sceneId=2-punto03" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha3.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 3</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6195707, lng: -74.0718697, color: 'orange', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 4',
+                                content: 'Texto del punto 4. <br><a href="recorridovirtual/index.html?sceneId=3-punto04" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha4.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 4</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6200079, lng: -74.072191, color: 'purple', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 5',
+                                content: 'Texto del punto 5. <br><a href="recorridovirtual/index.html?sceneId=4-punto05" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha5.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 5</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6189447, lng: -74.072939, color: 'cyan', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 6',
+                                content: 'Texto del punto 6. <br><a href="recorridovirtual/index.html?sceneId=5-punto06" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha6.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 6</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6184171, lng: -74.0732192, color: 'pink', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 7',
+                                content: 'Texto del punto 7. <br><a href="recorridovirtual/index.html?sceneId=6-punto07" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha7.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 7</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6182042, lng: -74.074264, color: 'yellow', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 8',
+                                content: 'Texto del punto 8. <br><a href="recorridovirtual/index.html?sceneId=7-punto08" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha8.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 8</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6197723, lng: -74.0744377, color: 'black', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 9',
+                                content: 'Texto del punto 9. <br><a href="recorridovirtual/index.html?sceneId=8-punto09" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha9.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 9</a>'
+                                }
+                            },
+                            {
+                                lat: 4.6208455, lng: -74.0717385, color: 'green', type: 'image',
+                                content: 'https://placehold.co/300x130',
+                                details: {
+                                title: 'Nombre del punto 10',
+                                content: 'Texto del punto 10. <br><a href="recorridovirtual/index.html?sceneId=9-punto10" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: '<a href="ficha10.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 10</a>'
+                                }
+                            }
+                            ];
     // Add markers
     points.forEach((point, i) => {
       const icon = L.ExtraMarkers.icon({

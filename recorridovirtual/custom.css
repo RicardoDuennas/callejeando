@@ -27,3 +27,33 @@
 .info-hotspot .info-hotspot-text a:hover {
   text-decoration: underline;
 }
+
+#bottomLeftImage {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 30vw;              /* responsive width relative to viewport */
+  max-width: 400px;         /* prevent it from growing too big */
+  aspect-ratio: 1 / 1;      /* keep it perfectly square */
+  background-color: rgba(0,0,0,0.2); /* optional: subtle background */
+  border-radius: 8px;       /* optional rounded corners */
+  overflow: hidden;         /* ensures the image stays inside the box */
+  z-index: 1000;            /* stay on top of other elements */
+}
+
+#bottomLeftImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* maintain aspect ratio while filling the square */
+  display: block;
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 600px) {
+  #bottomLeftImage {
+    width: 20vw;
+    max-width: 100px;
+    bottom: 10px;
+    left: 10px;
+  }
+}

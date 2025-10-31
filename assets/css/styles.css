@@ -174,3 +174,16 @@ a:hover {
   color: #636262;
 }
 
+/* NAVBAR */
+
+/* Keeps the page content below the fixed navbar */
+    body {
+      padding-top: 56px; /* prevent content from hiding behind fixed navbar */
+    }
+    .navbar-brand img {
+      height: 32px; /* smaller logo */
+    }
+    
+#intro ul{
+  padding-left: 0;
+}
