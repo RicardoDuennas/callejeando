@@ -33,80 +33,8 @@ var APP_DATA = {
         "fov": Math.PI
       },
       "linkHotspots": [
-        // {
-        //   "yaw": -2.1293920600024414,
-        //   "pitch": -0.008881313111505307,
-        //   "rotation": 0,
-        //   "target": "6-punto07"
-        // },
-        // {
-        //   "yaw": -2.0114290030261017,
-        //   "pitch": 0.018297427314024617,
-        //   "rotation": 7.0685834705770345,
-        //   "target": "1-punto02"
-        // },
-        // {
-        //   "yaw": 0.4106509309243762,
-        //   "pitch": -0.046624659824068715,
-        //   "rotation": 4.71238898038469,
-        //   "target": "9-punto10"
-        // }
       ],
       "infoHotspots": [
-        // {
-        //   "yaw": -0,
-        //   "pitch": -0,
-        //   "title": "0, 0",
-        //   "text": `  `
-        // },
-        // {
-        //   "yaw": 0,
-        //   "pitch": Math.PI/16,
-        //   "title": "0, 0.19634954084",
-        //   "text": `  `
-        // },
-        // {
-        //   "yaw": 0,
-        //   "pitch": -Math.PI/16,
-        //   "title": "0, -0.19634954084",
-        //   "text": `  `
-        // },
-        // {
-        //   "yaw": -Math.PI/2,
-        //   "pitch": -0,
-        //   "title": "-1.57079632679, 0",
-        //   "text": `  `
-        // },
-        // {
-        //   "yaw": -Math.PI/2,
-        //   "pitch": Math.PI/16,
-        //   "title": "-1.57079632679, 0.19634954084",
-        //   "text": `  `
-        // },
-        // {
-        //   "yaw": -Math.PI/2,
-        //   "pitch": -Math.PI/16,
-        //   "title": "-1.57079632679, -0.19634954084",
-        //   "text": `  `
-        // },
-        // {
-        //   "yaw": Math.PI/2,
-        //   "pitch": -0,
-        //   "title": "1.57079632679, 0",
-        //   "text": `  `
-        // },
-        // {
-        //   "yaw": Math.PI/2,
-        //   "pitch": Math.PI/16,
-        //   "title": "1.57079632679, 0.19634954084",
-        //   "text": `  `
-        // },
-        // {
-        //   "yaw": Math.PI/2,
-        //   "pitch": -Math.PI/16,
-        //   "title": "1.57079632679, -0.19634954084",
-        //   "text": `  `
-        // },
         {
           "yaw": -0.1,
           "pitch": 0,
@@ -197,30 +125,6 @@ var APP_DATA = {
         "fov": Math.PI
       },
       "linkHotspots": [
-        // {
-        //   "yaw": 0.13850761170457737,
-        //   "pitch": 0.06261091786976891,
-        //   "rotation": 5.497787143782138,
-        //   "target": "5-punto06"
-        // },
-        // {
-        //   "yaw": 0.33077835776725273,
-        //   "pitch": 0.034885737119822124,
-        //   "rotation": 0,
-        //   "target": "4-punto05"
-        // },
-        // {
-        //   "yaw": 0.9154881183395407,
-        //   "pitch": -0.010105014913609267,
-        //   "rotation": 0,
-        //   "target": "2-punto03"
-        // },
-        // {
-        //   "yaw": -3.1247656788654474,
-        //   "pitch": -0.027417357091586325,
-        //   "rotation": 10.995574287564278,
-        //   "target": "9-punto10"
-        // }
       ],
       "infoHotspots": [
         // {
@@ -278,29 +182,44 @@ var APP_DATA = {
         //   "text": `  `
         // },        
         {
-          "yaw": -1.1780972451,
-          "pitch": -0.046624659824068715,
-          "title": "El corredor de las jardineras",
+          "yaw": Math.PI*2,
+          "pitch": 0,
+          "title": "El corredor polaco",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+              Sobre el costado oriental se conservan edificaciones construidas en 
+              la década de 1950, cuyos propietarios originales fueron en su mayoría 
+              inmigrantes judíos, muchos de ellos de origen polaco. Esta presencia 
+              marcó la identidad del sector, al punto de que la vía llegó a conocerse 
+              popularmente como el corredor polaco.
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
-              <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+          `
+        },        
+        {
+          "yaw": -Math.PI*.33,
+          "pitch": 0,
+          "title": "Jardineras de la carrera 15",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              Aquí se puede ver la franja verde formada por las jardineras que fueron 
+              concebidas y siembradas por la comunidad vecinal de Armenia en el año 20xx. 
+              La iniciativa tuvo una huella significativa en la vida del sector y sirvió 
+              como escenario para fortalecer el tejido comunitario.
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
+          `
+        },        
+        {
+          "yaw": -Math.PI/2,
+          "pitch": -Math.PI *.025,
+          "title": "Casas estilo ingles",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              Hacia el norte de la calle se pueden observar viviendas que datan de los años 
+              sesenta y casas con estilos ingleses alineadas en serie.
+            </p>
           `
         }
       ]
