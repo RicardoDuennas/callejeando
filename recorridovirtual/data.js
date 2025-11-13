@@ -108,29 +108,58 @@ var APP_DATA = {
         //   "text": `  `
         // },
         {
-          "yaw": 2.106509309243762,
-          "pitch": -0.16624659824068715,
-          "title": "El barrio Armenia sobre la Caracas",
+          "yaw": -0.1,
+          "pitch": 0,
+          "title": "Diagonal 30",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+              Es una zona de penetración de población flotante y comercio, donde las viviendas 
+              en sus primeros pisos han sido rentadas para bares, cafés, restaurantes y locales 
+              comerciales, mientras que el segundo nivel se utiliza para alquiler de habitaciones 
+              y oficinas.
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
-              <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+          `
+        },
+        {
+          "yaw": 0,
+          "pitch": Math.PI,
+          "title": "Impacto del Metro",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              La construcción de la línea 1 del metro afectará el acceso al barrio Armenia por el 
+              cierre del paso vehicular y el cruce peatonal, lo que ha provocado que muchos establecimientos 
+              locales se hayan visto afectados y algunos se hayan visto obligados a cerrar sus negocios.
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
+          `
+        },
+        {
+          "yaw": -Math.PI*0.7,
+          "pitch": -Math.PI*0.1,
+          "title": "Parque Central Bavaria",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              Allí se ubicó una de las primeras industrias de Bogotá, la fábrica de cerveza Bavaria 
+              cuyas instalaciones  estaban ubicadas entre la calle 13 y la 14. Fue fundada en 1889 
+              por los hermanos Leo y Emil Koppel junto con Santiago y Carlos Castello, Bavaria se 
+              convirtió en la cervecera más importante de Colombia. La fábrica fue diseñada por el 
+              ingeniero español Alejandro Manrique Canals y funcionó hasta que se trasladó a una nueva planta en 1973.
+            </p>
+          `
+        },
+        {
+          "yaw": 2.106509309243762,
+          "pitch": -0.16624659824068715,
+          "title": "Restaurante CremHelado",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              En esta imagen se puede ubicar el antiguo local del Crem Helado, un ícono de Bogotá que 
+              ofreció helados, hamburguesas, pollo asado y malteadas durante la década de 1950. El sitio 
+              fue fundado por Horace Day y se convirtió en uno de los restaurantes más populares de la ciudad.
+            </p>
           `
         }
       ]
