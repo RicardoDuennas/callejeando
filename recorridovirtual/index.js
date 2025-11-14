@@ -28,7 +28,11 @@
   var sceneElements = document.querySelectorAll('#sceneList .scene');
   var sceneListToggleElement = document.querySelector('#sceneListToggle');
   var autorotateToggleElement = document.querySelector('#autorotateToggle');
+  var soundToggleElement = document.querySelector('#soundToggle');
   var fullscreenToggleElement = document.querySelector('#fullscreenToggle');
+
+  // Sound playing 
+  let currentAudio = null;
 
   // Detect desktop or mobile mode.
   if (window.matchMedia) {
@@ -106,6 +110,19 @@
       view: view
     };
   });
+
+  // Set up sound, if enabled.
+  // var autorotate = Marzipano.autorotate({
+  //   yawSpeed: 0.03,
+  //   targetPitch: 0,
+  //   targetFov: Math.PI/2
+  // });
+  if (data.settings.soundEnabled) {
+    soundToggleElement.classList.add('enabled');
+  }
+
+  // Set handler for sound toggle.
+  soundToggleElement.addEventListener('click', toggleSound);
 
   // Set up autorotate, if enabled.
   var autorotate = Marzipano.autorotate({
@@ -189,6 +206,7 @@
     startAutorotate();
     updateSceneName(scene);
     updateSceneList(scene);
+    playSceneSound(scene.data.id); 
   }
 
   function updateSceneName(scene) {
@@ -232,6 +250,66 @@
   function stopAutorotate() {
     viewer.stopMovement();
     viewer.setIdleMovement(Infinity);
+  }
+
+  function startSound() {
+    currentAudio.play();
+  }
+
+  function fadeOutAudio(audio, fadeDuration = 500) {
+      const fadeSteps = 20;
+      const fadeInterval = fadeDuration / fadeSteps;
+      let step = 0;
+      const initialVolume = audio.volume;
+
+      const fadeOut = setInterval(() => {
+          step++;
+          audio.volume = Math.max(initialVolume * (1 - step / fadeSteps), 0);
+          if (step >= fadeSteps) {
+              audio.pause();
+              audio.currentTime = 0;
+              audio.volume = 1;
+              clearInterval(fadeOut);
+          }
+      }, fadeInterval);
+  }
+
+  function playSceneSound(scene) {
+
+      const audioFiles = {
+          "0-punto01": "audio/punto1.mp3",
+          "1-punto02": "audio/punto2.mp3",
+          "2-punto03": "audio/punto3.mp3",
+          "3-punto04": "audio/punto4.mp3",
+          "4-punto05": "audio/punto5.mp3",
+          "5-punto06": "audio/punto6.mp3",
+          "6-punto07": "audio/punto7.mp3",
+          "7-punto08": "audio/punto8.mp3",
+          "8-punto09": "audio/punto9.mp3",
+          "9-punto10": "audio/punto10.mp3"
+      };
+
+      const audioSrc = audioFiles[scene];
+      if (!audioSrc) return; 
+
+      if (currentAudio) {
+          fadeOutAudio(currentAudio, 500); 
+      }
+
+      setTimeout(() => {
+          currentAudio = new Audio(audioSrc);
+          currentAudio.play().catch(e => console.log("Audio playback failed:", e));
+      }, 1000);
+  }
+
+  function toggleSound() {
+    if (soundToggleElement.classList.contains('enabled')) {
+      soundToggleElement.classList.remove('enabled');
+      stopSound();
+    } else {
+      soundToggleElement.classList.add('enabled');
+      startSound();
+    }
   }
 
   function toggleAutorotate() {

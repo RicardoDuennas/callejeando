@@ -1289,6 +1289,7 @@ var APP_DATA = {
   "name": "Callejeando",
   "settings": {
     "mouseViewMode": "drag",
+    "soundEnabled": true,
     "autorotateEnabled": true,
     "fullscreenButton": true,
     "viewControlButtons": false

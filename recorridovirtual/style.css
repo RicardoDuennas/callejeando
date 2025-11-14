@@ -183,7 +183,7 @@ body.fullscreen-enabled #fullscreenToggle {
   display: none;
 }
 
-#autorotateToggle {
+#autorotateToggle, #soundToggle {
   display: block;
   position: absolute;
   top: 0;
@@ -195,9 +195,14 @@ body.fullscreen-enabled #fullscreenToggle {
   background-color: rgba(103,115,131,0.8);
 }
 
-.mobile #autorotateToggle {
+.mobile #autorotateToggle, .mobile #soundToggle {
   width: 50px;
   height: 50px;
+}
+
+/* If there is a fullscreen button, sound must placed a bit to the left */
+body.fullscreen-enabled #soundToggle {
+  right: 80px;
 }
 
 /* If there is a fullscreen button, autorotate must placed a bit to the left */
@@ -205,11 +210,22 @@ body.fullscreen-enabled #autorotateToggle {
   right: 40px;
 }
 
+body.fullscreen-enabled.mobile #soundToggle {
+  right: 100px;
+}
 body.fullscreen-enabled.mobile #autorotateToggle {
   right: 50px;
 }
 
-#autorotateToggle .icon {
+#autorotateToggle .icon, #soundToggle .icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+#soundToggle .icon ::before {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -222,19 +238,24 @@ body.fullscreen-enabled.mobile #autorotateToggle {
   right: 10px;
 }
 
-#autorotateToggle .icon.on {
+.mobile #soundToggle .icon {
+  top: 10px;
+  right: 50px;
+}
+
+#autorotateToggle .icon.on, #soundToggle .icon.on {
   display: none;
 }
 
-#autorotateToggle .icon.off {
+#autorotateToggle .icon.off, #soundToggle .icon.off {
   display: block;
 }
 
-#autorotateToggle.enabled .icon.on {
+#autorotateToggle.enabled .icon.on, #soundToggle.enabled .icon.on {
   display: block;
 }
 
-#autorotateToggle.enabled .icon.off {
+#autorotateToggle.enabled .icon.off, #soundToggle.enabled .icon.off {
   display: none;
 }
 
