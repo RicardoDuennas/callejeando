@@ -208,6 +208,7 @@
     startAutorotate();
     updateSceneName(scene);
     updateSceneList(scene);
+    stopAudio(currentAudio);
     playSceneSound(scene.data.id, scenes); 
     updateBottomImage(scene);
     currentSceneId = scene.data.id;
@@ -268,6 +269,14 @@
     playSceneSound(scene.data.id, scenes); 
   }
 
+  function stopAudio(audio) {
+    if (audio != null)
+    {     audio.pause();
+          audio.currentTime = 0;
+          audio.volume = 1;
+    }
+  }
+
   function fadeOutAudio(audio, fadeDuration = 500) {
       const fadeSteps = 20;
       const fadeInterval = fadeDuration / fadeSteps;
@@ -305,12 +314,6 @@
       const audioSrc = audioFiles[sceneId];
       if (!audioSrc) return;
 
-      document.querySelectorAll("audio").forEach(a => {
-          a.pause();
-          a.src = "";
-          a.remove();
-      });
-
       const sceneIndex = scenes.findIndex(s => s.data.id === sceneId);
       const nextScene = sceneIndex < scenes.length - 1 ? scenes[sceneIndex + 1] : null;
 
@@ -328,7 +331,8 @@
           }
 
           audio.play().catch(e => console.log("Audio playback failed:", e));
-
+          currentAudio = audio;
+          
           document.body.appendChild(audio);
 
       }, 300);
