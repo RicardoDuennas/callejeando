@@ -305,32 +305,33 @@
       const audioSrc = audioFiles[sceneId];
       if (!audioSrc) return;
 
-      // Find the index of the current scene in scenes array
+      document.querySelectorAll("audio").forEach(a => {
+          a.pause();
+          a.src = "";
+          a.remove();
+      });
+
       const sceneIndex = scenes.findIndex(s => s.data.id === sceneId);
-      
-      // Determine the next scene object, if any
       const nextScene = sceneIndex < scenes.length - 1 ? scenes[sceneIndex + 1] : null;
+
       if (nextScene) console.log("Next scene will be:", nextScene.data.id);
       else console.log("This is the last scene. No next scene.");
 
-      // Fade out previous audio
-      if (currentAudio) {
-          fadeOutAudio(currentAudio, 500);
-      }
-
-      // Play new audio after 1-second delay
       setTimeout(() => {
-          currentAudio = new Audio(audioSrc);
+          const audio = new Audio(audioSrc);
+          audio.volume = 1;
 
-          // Only add listener if there is a next scene
           if (nextScene) {
-              currentAudio.addEventListener("ended", () => {
+              audio.addEventListener("ended", () => {
                   switchScene(nextScene);
               });
           }
 
-          currentAudio.play().catch(e => console.log("Audio playback failed:", e));
-      }, 1000);
+          audio.play().catch(e => console.log("Audio playback failed:", e));
+
+          document.body.appendChild(audio);
+
+      }, 300);
   }
 
   function toggleSound() {
