@@ -338,29 +338,36 @@ var APP_DATA = {
         //   "text": `  `
         // },        
         {
-          "yaw": 0.55106509309243762,
-          "pitch": -0.046624659824068715,
-          "title": "El parque Armenia",
+          "yaw": Math.PI/10,
+          "pitch": 0,
+          "title": "El círculo de pacas",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+                En el Parque Armenia, una iniciativa creada por el profesor Guillermo Silva ha sido la creación de las "pacas digestotas", un lugar de encuentro para los vecinos del barrio que buscaban responsabilizarse de sus desechos orgánicos. Esta iniciativa ha permitido que se construya una comunidad en el parque, donde muchos vecinos se reúnen a depositar sus desechos orgánicos y conversar con otros. El profesor Silva, creador de las pacas, llegó cuando algunos residentes sintieron un profundo malestar cuando botaban los desperdicios de comida, mientras el relleno Sanitaro "Doña Juana" se enconraba cerca de su capacidad límite. Esto llevó a que muchos vecinos buscaran una alternativa para responsabilizarse de sus desechos y las pacas han sido una excelente opción.            
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
-              <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+          `
+        },        
+        {
+          "yaw": Math.PI,
+          "pitch": 0,
+          "title": "Edificaciones alrededor del parque",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              El contorno del parque está conformado por edificios que datan de los años cuarenta y cincuenta y algunas viviendas con estilo inglés, donde se destaca la casa donde habitaba la Sra María E. Sánchez propietaria de 14 casas de estilo inglés sobre la carrera 16 destinadas a la renta. Actualmente esa casa ha sido adquirida por el partido Centro Democrático.
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
+          `
+        },        
+        {
+          "yaw": Math.PI/2,
+          "pitch": 0,
+          "title": "Espacio compartido",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              El Parque Armenia ha sido un escenario compartido por múltiples actores sociales, incluyendo jóvenes que juegan en sus canchas, vecinos que pasean con sus mascotas y colectivos que reciclan sus desechos orgánicos. Al observar el tamaño de los árboles y la extensión de sus ramas, se puede intuir el paso del tiempo y reconocer los distintos periodos en los que las comunidades y colectivos barriales se reunieron para sembrarlos. Algunos de esos árboles corren el riesgo de ser talados.
+            </p>
           `
         }
       ]
