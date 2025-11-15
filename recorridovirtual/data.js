@@ -3,6 +3,7 @@ var APP_DATA = {
     {
       "id": "0-punto01",
       "name": "1. El barrio Armenia sobre la Caracas",
+      "previewImage": "thumb01.jpg",
       "levels": [
         {
           "tileSize": 256,
@@ -95,6 +96,7 @@ var APP_DATA = {
     {
       "id": "1-punto02",
       "name": "2. El corredor de las jardineras",
+      "previewImage": "thumb02.jpg",
       "levels": [
         {
           "tileSize": 256,
@@ -227,6 +229,7 @@ var APP_DATA = {
     {
       "id": "2-punto03",
       "name": "3. El parque Armenia",
+      "previewImage": "thumb03.jpg",
       "levels": [
         {
           "tileSize": 256,
@@ -375,6 +378,7 @@ var APP_DATA = {
     {
       "id": "3-punto04",
       "name": "4. La casona y parque El Pony",
+      "previewImage": "thumb04.jpg",
       "levels": [
         {
           "tileSize": 256,
@@ -510,6 +514,7 @@ var APP_DATA = {
     {
       "id": "4-punto05",
       "name": "5. La casa del General París y su vecindario",
+      "previewImage": "thumb05.jpg",
       "levels": [
         {
           "tileSize": 256,
@@ -650,7 +655,8 @@ var APP_DATA = {
     },
     {
       "id": "5-punto06",
-      "name": "6. Documento faltante",
+      "name": "6. Documento en construcción",
+      "previewImage": "thumb06.jpg",
       "levels": [
         {
           "tileSize": 256,
@@ -780,6 +786,7 @@ var APP_DATA = {
     {
       "id": "6-punto07",
       "name": "7. La YMCA y la sinagoga",
+      "previewImage": "thumb07.jpg",
       "levels": [
         {
           "tileSize": 256,
@@ -909,6 +916,7 @@ var APP_DATA = {
     {
       "id": "7-punto08",
       "name": "8. El Umbral de la Reconciliación",
+      "previewImage": "thumb08.jpg",
       "levels": [
         {
           "tileSize": 256,
@@ -1038,6 +1046,7 @@ var APP_DATA = {
     {
       "id": "8-punto09",
       "name": "9. El corredor de Las Mercedes",
+      "previewImage": "thumb09.jpg",
       "levels": [
         {
           "tileSize": 256,
@@ -1166,7 +1175,8 @@ var APP_DATA = {
     },
     {
       "id": "9-punto10",
-      "name": "10. Documento faltante",
+      "name": "10. Documento en construcción",
+      "previewImage": "thumb10.jpg",
       "levels": [
         {
           "tileSize": 256,

@@ -30,6 +30,7 @@
   var autorotateToggleElement = document.querySelector('#autorotateToggle');
   var soundToggleElement = document.querySelector('#soundToggle');
   var fullscreenToggleElement = document.querySelector('#fullscreenToggle');
+  var bottomLeftImageElement = document.querySelector('#bottomImage');
 
   // Sound playing 
   let currentAudio = null;
@@ -208,6 +209,7 @@
     updateSceneName(scene);
     updateSceneList(scene);
     playSceneSound(scene.data.id, scenes); 
+    updateBottomImage(scene);
     currentSceneId = scene.data.id;
   }
 
@@ -224,6 +226,14 @@
         el.classList.remove('current');
       }
     }
+  }
+
+  function updateBottomImage(scene) {
+    const img = document.querySelector('#bottomLeftImage img');
+    if (!img) return;
+
+    img.src = "img/" + scene.data.previewImage; 
+    img.alt = scene.data.name || "Scene preview";
   }
 
   function showSceneList() {
