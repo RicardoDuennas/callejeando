@@ -33,6 +33,7 @@
 
   // Sound playing 
   let currentAudio = null;
+  let currentSceneId = null;
 
   // Detect desktop or mobile mode.
   if (window.matchMedia) {
@@ -206,7 +207,8 @@
     startAutorotate();
     updateSceneName(scene);
     updateSceneList(scene);
-    playSceneSound(scene.data.id); 
+    playSceneSound(scene.data.id, scenes); 
+    currentSceneId = scene.data.id;
   }
 
   function updateSceneName(scene) {
@@ -253,7 +255,7 @@
   }
 
   function startSound() {
-    currentAudio.play();
+    playSceneSound(scene.data.id, scenes); 
   }
 
   function fadeOutAudio(audio, fadeDuration = 500) {
@@ -274,7 +276,8 @@
       }, fadeInterval);
   }
 
-  function playSceneSound(scene) {
+  function playSceneSound(sceneId, scenes) {
+      console.log("Playing scene:", sceneId);
 
       const audioFiles = {
           "0-punto01": "audio/punto1.mp3",
@@ -289,15 +292,33 @@
           "9-punto10": "audio/punto10.mp3"
       };
 
-      const audioSrc = audioFiles[scene];
-      if (!audioSrc) return; 
+      const audioSrc = audioFiles[sceneId];
+      if (!audioSrc) return;
 
+      // Find the index of the current scene in scenes array
+      const sceneIndex = scenes.findIndex(s => s.data.id === sceneId);
+      
+      // Determine the next scene object, if any
+      const nextScene = sceneIndex < scenes.length - 1 ? scenes[sceneIndex + 1] : null;
+      if (nextScene) console.log("Next scene will be:", nextScene.data.id);
+      else console.log("This is the last scene. No next scene.");
+
+      // Fade out previous audio
       if (currentAudio) {
-          fadeOutAudio(currentAudio, 500); 
+          fadeOutAudio(currentAudio, 500);
       }
 
+      // Play new audio after 1-second delay
       setTimeout(() => {
           currentAudio = new Audio(audioSrc);
+
+          // Only add listener if there is a next scene
+          if (nextScene) {
+              currentAudio.addEventListener("ended", () => {
+                  switchScene(nextScene);
+              });
+          }
+
           currentAudio.play().catch(e => console.log("Audio playback failed:", e));
       }, 1000);
   }
@@ -305,10 +326,10 @@
   function toggleSound() {
     if (soundToggleElement.classList.contains('enabled')) {
       soundToggleElement.classList.remove('enabled');
-      stopSound();
+      fadeOutAudio(currentAudio, 500);
     } else {
       soundToggleElement.classList.add('enabled');
-      startSound();
+      playSceneSound(currentSceneId, scenes);
     }
   }
 

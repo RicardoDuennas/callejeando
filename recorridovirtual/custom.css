@@ -32,28 +32,42 @@
   position: fixed;
   bottom: 20px;
   left: 20px;
-  width: 30vw;              /* responsive width relative to viewport */
-  max-width: 400px;         /* prevent it from growing too big */
-  aspect-ratio: 1 / 1;      /* keep it perfectly square */
-  background-color: rgba(0,0,0,0.2); /* optional: subtle background */
-  border-radius: 8px;       /* optional rounded corners */
-  overflow: hidden;         /* ensures the image stays inside the box */
-  z-index: 1000;            /* stay on top of other elements */
+  width: 20vw;               /* desktop: 20% of viewport */
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
 }
 
 #bottomLeftImage img {
   width: 100%;
   height: 100%;
-  object-fit: cover;        /* maintain aspect ratio while filling the square */
+  object-fit: cover;
   display: block;
+  min-width: 350px;
+    width: 80vw;
+    max-width: 300px;
 }
 
-/* Responsive tweaks for smaller screens */
-@media (max-width: 600px) {
+/* Mobile portrait: width < height */
+@media (max-width: 900px) and (orientation: portrait) {
   #bottomLeftImage {
-    width: 20vw;
-    max-width: 100px;
-    bottom: 10px;
-    left: 10px;
+    width: 80vw;
+    max-width: 300px;
+    bottom: 20px;
+    left: 20px;
+    right: auto;
+  }
+}
+
+/* Small height viewport: move image to right */
+@media (max-height: 750px) {
+  #bottomLeftImage {
+    width: 80vw;
+    max-width: 300px;
+    right: 20px;
+    left: auto;
   }
 }
