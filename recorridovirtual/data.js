@@ -1175,7 +1175,7 @@ var APP_DATA = {
     },
     {
       "id": "9-punto10",
-      "name": "10. Documento en construcción",
+      "name": "10. La alameda de la 32",
       "previewImage": "thumb10.jpg",
       "levels": [
         {
