@@ -99,9 +99,7 @@
 
                         <h1 class="card-title text-primary mb-3">Mapa del recorrido</h1>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, erat nec dictum facilisis, 
-                            nisl ligula cursus sem, sit amet sodales risus magna non tortor. Integer et arcu nec velit gravida 
-                            rhoncus vitae ac enim. Suspendisse vel augue nec tortor varius dictum.
+                            Navega el mapa para ver la ubicación de los puntos. Haz click en cada punto para lanzar el recorrido. 
                         </p>
 
                     </div>
@@ -143,93 +141,83 @@
                             // Fixed list of markers with details
                             const points = [
                             {
-                                lat: 4.6176683, lng: -74.07177, color: 'red', type: 'image',
-                                content: 'https://placehold.co/300x130',
+                                lat: 4.6176683, lng: -74.07177, color: 'red', type: 'text',
                                 details: {
-                                title: 'Nombre del punto 1',
-                                content: 'Texto del punto 1. <br><a href="recorridovirtual/index.html?sceneId=0-punto01" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
-                                extra: '<a href="ficha1.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 1</a>'
+                                title: '1. El barrio Armenia sobre la Caracas',
+                                content: '<a href="recorridovirtual/index.html?sceneId=0-punto01" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
                                 }
                             },
                             {
-                                lat: 4.6165786, lng: -74.0730897, color: 'green', type: 'image',
-                                content: 'https://placehold.co/300x130',
+                                lat: 4.6165786, lng: -74.0730897, color: 'green', type: 'text',
                                 details: {
-                                title: 'Nombre del punto 2',
-                                content: 'Texto del punto 2. <br><a href="recorridovirtual/index.html?sceneId=1-punto02" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
-                                extra: '<a href="ficha2.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 2</a>'
+                                title: '2. El corredor de las jardineras',
+                                content: '<a href="recorridovirtual/index.html?sceneId=1-punto02" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
                                 }
                             },
                             {
-                                lat: 4.61742, lng: -74.073299, color: 'blue', type: 'image',
-                                content: 'https://placehold.co/300x130',
+                                lat: 4.61742, lng: -74.073299, color: 'blue', type: 'text',
                                 details: {
-                                title: 'Nombre del punto 3',
-                                content: 'Texto del punto 3. <br><a href="recorridovirtual/index.html?sceneId=2-punto03" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
-                                extra: '<a href="ficha3.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 3</a>'
+                                title: '3. El parque Armenia',
+                                content: '<a href="recorridovirtual/index.html?sceneId=2-punto03" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
                                 }
                             },
                             {
-                                lat: 4.6195707, lng: -74.0718697, color: 'orange', type: 'image',
-                                content: 'https://placehold.co/300x130',
+                                lat: 4.6195707, lng: -74.0718697, color: 'orange', type: 'text',
                                 details: {
-                                title: 'Nombre del punto 4',
-                                content: 'Texto del punto 4. <br><a href="recorridovirtual/index.html?sceneId=3-punto04" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
-                                extra: '<a href="ficha4.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 4</a>'
+                                title: '4. La casona y parque El Pony',
+                                content: '<a href="recorridovirtual/index.html?sceneId=3-punto04" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
                                 }
                             },
                             {
-                                lat: 4.6200079, lng: -74.072191, color: 'purple', type: 'image',
-                                content: 'https://placehold.co/300x130',
+                                lat: 4.6200079, lng: -74.072191, color: 'purple', type: 'text',
                                 details: {
-                                title: 'Nombre del punto 5',
-                                content: 'Texto del punto 5. <br><a href="recorridovirtual/index.html?sceneId=4-punto05" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
-                                extra: '<a href="ficha5.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 5</a>'
+                                title: '5. La casa del General París y su vecindario',
+                                content: '<a href="recorridovirtual/index.html?sceneId=4-punto05" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
                                 }
                             },
                             {
-                                lat: 4.6189447, lng: -74.072939, color: 'cyan', type: 'image',
-                                content: 'https://placehold.co/300x130',
+                                lat: 4.6189447, lng: -74.072939, color: 'cyan', type: 'text',
                                 details: {
-                                title: 'Nombre del punto 6',
-                                content: 'Texto del punto 6. <br><a href="recorridovirtual/index.html?sceneId=5-punto06" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
-                                extra: '<a href="ficha6.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 6</a>'
+                                title: '6. Documento en construcción',
+                                content: '<a href="recorridovirtual/index.html?sceneId=5-punto06" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
                                 }
                             },
                             {
-                                lat: 4.6184171, lng: -74.0732192, color: 'pink', type: 'image',
-                                content: 'https://placehold.co/300x130',
+                                lat: 4.6184171, lng: -74.0732192, color: 'pink', type: 'text',
                                 details: {
-                                title: 'Nombre del punto 7',
-                                content: 'Texto del punto 7. <br><a href="recorridovirtual/index.html?sceneId=6-punto07" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
-                                extra: '<a href="ficha7.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 7</a>'
+                                title: '7. La YMCA y la sinagoga',
+                                content: '<br><a href="recorridovirtual/index.html?sceneId=6-punto07" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
                                 }
                             },
                             {
-                                lat: 4.6182042, lng: -74.074264, color: 'yellow', type: 'image',
-                                content: 'https://placehold.co/300x130',
+                                lat: 4.6182042, lng: -74.074264, color: 'yellow', type: 'text',
                                 details: {
-                                title: 'Nombre del punto 8',
-                                content: 'Texto del punto 8. <br><a href="recorridovirtual/index.html?sceneId=7-punto08" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
-                                extra: '<a href="ficha8.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 8</a>'
+                                title: '8. El Umbral de la Reconciliación',
+                                content: '<br><a href="recorridovirtual/index.html?sceneId=7-punto08" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
                                 }
                             },
                             {
-                                lat: 4.6197723, lng: -74.0744377, color: 'black', type: 'image',
-                                content: 'https://placehold.co/300x130',
+                                lat: 4.6197723, lng: -74.0744377, color: 'black', type: 'text',
                                 details: {
-                                title: 'Nombre del punto 9',
-                                content: 'Texto del punto 9. <br><a href="recorridovirtual/index.html?sceneId=8-punto09" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
-                                extra: '<a href="ficha9.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 9</a>'
+                                title: '9. El corredor de Las Mercedes',
+                                content: '<br><a href="recorridovirtual/index.html?sceneId=8-punto09" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
                                 }
                             },
                             {
-                                lat: 4.6208455, lng: -74.0717385, color: 'green', type: 'image',
-                                content: 'https://placehold.co/300x130',
+                                lat: 4.6208455, lng: -74.0717385, color: 'green', type: 'text',
                                 details: {
-                                title: 'Nombre del punto 10',
-                                content: 'Texto del punto 10. <br><a href="recorridovirtual/index.html?sceneId=9-punto10" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
-                                extra: '<a href="ficha10.html" target="" class="fw-semibold text-decoration-none">Ficha del punto 10</a>'
+                                title: '10. La alameda de la 32',
+                                content: '<br><a href="recorridovirtual/index.html?sceneId=9-punto10" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
                                 }
                             }
                             ];
